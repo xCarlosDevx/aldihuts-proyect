@@ -159,6 +159,7 @@ export default {
       this.actualizarTotal();
       localStorage.setItem("Carr-Ls", JSON.stringify(this.carrito));
       this.actualizar();
+      this.Alsplice();
     },
     actualizarTotal() {
       this.total = 0;
@@ -173,6 +174,12 @@ export default {
       } else {
         this.carrito = carrDB;
       }
+    },
+    Alsplice() {
+      this.$q.notify({
+        type: "negative",
+        message: `Su producto se ha eliminado del carrito.`,
+      });
     },
   },
  

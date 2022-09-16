@@ -1,23 +1,23 @@
 <template>
-  <div class="bg-secondary">
-    <br />
+  <div class="q-pt-sm bg-secondary">
     <h2 class="text-white title-main text-center">¡ORDENA YA!!</h2>
-    <div class="q-px-sm flex justify-around cajaMenu">
+    <div class="flex justify-around cajaMenu">
       <div
         class="q-my-md cajaItem"
         v-for="(pro, index) in productos"
         :key="index"
       >
-        <!-- style="background: radial-gradient(circle, #c28604 0%, #ffd655 60%)" -->
-
-        <img class="q-my-sm" :src="productos[index].imagen" />
+      
+<div class="image q-my-sm">
+  <img :src="productos[index].imagen" />
+</div>
 
         <div class="text-center">
           <p class="text-h5 text-bold">{{ productos[index].nombre }}</p>
           <p class="text-subtitle1 text-weight-medium text-italic">
             RD${{ productos[index].precio }}
           </p>
-          <q-btn
+          <q-btn class="q-mb-sm"
             outline
             color="primary"
             label="Al carrito"
@@ -43,7 +43,7 @@ export default {
       total: 0,
     };
   },
-  created: function () { 
+  created: function () {
     this.actualizarMenu();
     this.actualizarCarrito();
   },
@@ -120,8 +120,8 @@ export default {
 .title-main {
   position: relative;
   left: 30%;
-  width: 650px;
-  padding: 45px;
+  width: 50%;
+  padding: 3%;
   background: rgba(0, 0, 0, 0.5);
 }
 .parallax {
@@ -139,17 +139,16 @@ export default {
   border-radius: 0px;
   -webkit-border-radius: 10px;
 }
-.cajaItem {
-  width: 320px;
-  height: 420px;
+.cajaItem { 
+  width: 26%;
   background-color: white;
   border: 2px solid rgb(98, 99, 94, 0.7);
   border-radius: 0px;
   -webkit-border-radius: 10px;
 }
-.cajaItem img {
+.image img{
   position: relative;
-  left: 3%;
-  width: 296px;
+  left: 1%;
+  width: 98%;
 }
 </style>
